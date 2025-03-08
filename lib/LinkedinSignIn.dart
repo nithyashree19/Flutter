@@ -14,7 +14,12 @@ class _MyappState extends State<Myapp> {
 
   @override
   Widget build(BuildContext context) {
-   return MaterialApp(home:Scaffold(appBar: AppBar(title: Text("Linked In",style: TextStyle(color:Colors.blueAccent,fontSize: 30,fontWeight: FontWeight.bold),),
+   return MaterialApp(home:Scaffold(appBar: AppBar(title:Row(children: [Text("Linked" ,style: TextStyle(color:Colors.blueAccent,fontSize: 30,fontWeight: FontWeight.bold),),
+   Container(
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),
+    color: Colors.blueAccent),child:Text("in",
+    style: TextStyle(color:Colors.white,fontSize: 30,fontWeight: FontWeight.bold))
+   )],)
    ),
    body:Column(
   
@@ -34,7 +39,7 @@ class _MyappState extends State<Myapp> {
              ),
              
              Padding(
-               padding: const EdgeInsets.all(10.0),
+               padding: const EdgeInsets.only(left:5,right:5),
                child: Text("Stay updated on your professional world",style: TextStyle(color:Colors.black,fontSize: 15,fontWeight: FontWeight.bold)),
              ),
              SizedBox(height: 7,),
@@ -63,10 +68,9 @@ class _MyappState extends State<Myapp> {
               ))
              ],),
               SizedBox(height: 10,),
-              Expanded(child:SizedBox(width:double.infinity,child: OutlinedButton(onPressed: (){},style: OutlinedButton.styleFrom(textStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),child:Text("Sign in with Apple",style: TextStyle(color: Colors.black),)), ),
-               ) ,
+             Center(child:SizedBox(width:double.infinity,child: OutlinedButton.icon(onPressed: (){},icon:Icon(Icons.apple,color:Colors.black),style: OutlinedButton.styleFrom(textStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),label:Text("Sign in with Apple",style: TextStyle(color: Colors.black),))))
                
-         
+         ,
            ],
          ),
        ),
